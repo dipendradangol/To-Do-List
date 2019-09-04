@@ -1,20 +1,18 @@
-<?php
+<?php 
     namespace App\Controller;
-
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
-
-    class ClientController {
-
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    
+    class ClientController extends AbstractController {
         /**
-         *  @Route("/clients", name="clients_page")
+         * @Route("/subclient", name="client_controller")
          */
-
-        public function index(){
+        public function index() {
             return new Response("
             <html>
                 <body>
-                    <div>Hello frome client controller</div>
+                    <div>hello from client controller</div>    
                 </body>
             </html>");
         }

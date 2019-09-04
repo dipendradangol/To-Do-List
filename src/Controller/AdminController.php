@@ -3,21 +3,23 @@
 
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-    class AdminController extends Controller {
+    class AdminController extends AbstractController {
 
 
          /**
          *  @Route("/", name="home")
          */
         public function index(){
-            return $this->render("/todo/list.html.twig");
+            $data = [];
+            $data['taskList'] = ['Make a dough', 'Spread toppings', 'Bake it up'];
+            return $this->render("/todo/list.html.twig", $data);
         }
 
          /**
-         *  @Route("/clients", name="clients_page")
+         *  @Route("/clients", name="client_page")
          */
         public function clients(){
             return new Response("

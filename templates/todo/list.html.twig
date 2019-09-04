@@ -1,5 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block title %}
+    Task list
+{% endblock %}
 
+
+{% block todo %}
+    The first task is:
+    {{ tasklist[1] }}
+    <div>task 1</div>
+    <div>task 2</div>
+
+
+     {% if taskList is not null and taskList is defined %}
+        {% for task in tasklist %}
+            <div class="taskConten"{{ task }}></div>
+        {% endfor %}
+    {% else %}
+        <div>there has been no task found </div>
+    {% endif %}
 {% endblock %}
